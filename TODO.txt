@@ -1,2 +1,3 @@
-[ ] Fix cellular automata application
+[x] Fix cellular automata application
 [ ] Separate code in functions!
+[ ] Press key to reset/modify the grid

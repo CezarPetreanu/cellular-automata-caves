@@ -33,7 +33,7 @@ int main()
 			grid[i][j] = rand() % 2;
 
 	// apply cellular
-	int reps = 1;
+	int reps = 5;
 	for (int r = 0; r < reps; r++)
 	{
 		int grid_copy[60][60] = { 0 };
@@ -41,14 +41,10 @@ int main()
 		{
 			for (int j = 1; j < 59; j++)
 			{
-				std::cout << get_grid_sum(grid, i, j) << " ";
 				if (get_grid_sum(grid, i, j) > 4)
 					grid_copy[i][j] = 1;
 			}
-			std::cout << std::endl;
 		}
-
-		std::cout << std::endl;
 
 		for (int i = 1; i < 59; i++)
 			for (int j = 1; j < 59; j++)
@@ -95,8 +91,8 @@ int main()
 int get_grid_sum(int grid[60][60], int i, int j)
 {
 	int s = 0;
-	for (int ii = i - 1; ii < i + 1; ii++)
-		for (int jj = j - 1; jj < j + 1; jj++)
+	for (int ii = i - 1; ii <= i + 1; ii++)
+		for (int jj = j - 1; jj <= j + 1; jj++)
 			s += grid[ii][jj];
 	return s;
 }
