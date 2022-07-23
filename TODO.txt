@@ -2,7 +2,7 @@
 [x] Separate code in functions!
 [x] Press key to reset/modify the grid
 [x] Add border
-[ ] Pause when out of focusr
+[ ] Pause when out of focus
 [ ] Add instructions text
 [ ] Memory optimization - dynamically allocated matrix
 [ ] Make it work for more grid sizes?
