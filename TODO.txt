@@ -1,3 +1,8 @@
 [x] Fix cellular automata application
-[ ] Separate code in functions!
-[ ] Press key to reset/modify the grid
+[x] Separate code in functions!
+[x] Press key to reset/modify the grid
+[x] Add border
+[ ] Pause when out of focusr
+[ ] Add instructions text
+[ ] Memory optimization - dynamically allocated matrix
+[ ] Make it work for more grid sizes?

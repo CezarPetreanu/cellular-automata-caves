@@ -1,5 +1,3 @@
-// 21/07/2022 WARNING: CELLULAR AUTOMATA ALGORITHM NOT WORKING PROPERLY!
-
 #include "Platform/Platform.hpp"
 #include <iostream>
 #include <stdio.h>
@@ -32,13 +30,15 @@ int main()
 	int grid[60][60];
 	init_grid(grid);
 
-	// apply cellular
-	apply_cellular(grid);
-
 	// drawing
 	sf::RectangleShape rect;
 	rect.setSize(sf::Vector2f(10.f, 10.f));
 	rect.setFillColor(sf::Color(255, 255, 0));
+
+	int current_key_cellular = 0;
+	int previous_key_cellular = 0;
+	int current_key_reset = 0;
+	int previous_key_reset = 0;
 
 	while (window.isOpen())
 	{
@@ -47,6 +47,20 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
+
+		// press Q to apply cellular
+		previous_key_cellular = current_key_cellular;
+		current_key_cellular = (GetAsyncKeyState('Q') & 0x8000);
+
+		if (previous_key_cellular == 0 && current_key_cellular != 0)
+			apply_cellular(grid); // apply cellular
+
+		// press R to reset grid
+		previous_key_reset = current_key_reset;
+		current_key_reset = (GetAsyncKeyState('R') & 0x8000);
+
+		if (previous_key_reset == 0 && current_key_reset != 0)
+			init_grid(grid); // reset
 
 		window.clear();
 		//DRAW STUFF HERE
@@ -70,7 +84,7 @@ void init_grid(int grid[60][60])
 {
 	for (int i = 0; i < 60; i++)
 		for (int j = 0; j < 60; j++)
-			grid[i][j] = rand() % 2;
+			grid[i][j] = (rand() % 2) * (i > 0 && i < 59 && j > 0 && j < 59);
 }
 
 int get_grid_sum(int grid[60][60], int i, int j)
