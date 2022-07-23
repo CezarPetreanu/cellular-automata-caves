@@ -11,4 +11,4 @@ Only two keys are needed to play with the grid.
 - R - Reset grid
 
 ## The program in action!
-![The program working on 4 examples](https://i.imgur.com/A2ddJUB.gif "Here are 4 examples")
+![Animated GIF: the program working on 4 examples.](https://i.imgur.com/A2ddJUB.gif "The program working on 4 examples.")

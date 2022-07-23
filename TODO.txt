@@ -3,6 +3,7 @@
 [x] Press key to reset/modify the grid
 [x] Add border
 [ ] Pause when out of focus
-[ ] Add instructions text
-[ ] Memory optimization - dynamically allocated matrix
+[x] Add instructions text
+[x] Memory optimization - dynamically allocated matrix
 [ ] Make it work for more grid sizes?
+		note: working on it. Extended grid from 60 to 120. I need to find a formula, one-size-fits-all and stuff.
