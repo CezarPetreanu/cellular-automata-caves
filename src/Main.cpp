@@ -4,7 +4,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 120
+#define SIZE 150.f
+#define SCREEN 600.f
 
 int** init_grid(int grid_size);
 void reset_grid(int** grid);
@@ -35,7 +36,7 @@ int main()
 
 	// drawing
 	sf::RectangleShape rect;
-	rect.setSize(sf::Vector2f(5.f, 5.f));
+	rect.setSize(sf::Vector2f(SCREEN / SIZE, SCREEN / SIZE));
 	rect.setFillColor(sf::Color(255, 255, 0));
 
 	sf::Font font;
@@ -83,7 +84,7 @@ int main()
 			for (int j = 0; j < SIZE; j++)
 				if (grid[i][j])
 				{
-					rect.setPosition(sf::Vector2f(20.f + i * 5, 20.f + j * 5));
+					rect.setPosition(sf::Vector2f(20.f + i * (SCREEN / SIZE), 20.f + j * (SCREEN / SIZE)));
 					window.draw(rect);
 				}
 		window.draw(text_instructions);
